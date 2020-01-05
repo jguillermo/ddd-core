@@ -14,7 +14,7 @@ class TypeStringSpec  extends Specification{
         '_'               || '_'
         ' _'              || ' _'
         '"'               || '"'
-        'abcdefghiABCDFG' || 'abcdefghiABCDFGg'
+        'abcdefghiABCDFG' || 'abcdefghiABCDFG'
         'aAáéíóúÁÉÍÓÚÑñ'  || 'aAáéíóúÁÉÍÓÚÑñ'
         null              || null
     }
