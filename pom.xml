@@ -9,14 +9,6 @@
     <name>core</name>
     <description>Demo project for Spring Boot</description>
 
-    <repositories>
-        <repository>
-            <id>jcenter</id>
-            <name>JCenter Repo</name>
-            <url>http://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
-
 
     <properties>
         <java.version>11</java.version>
