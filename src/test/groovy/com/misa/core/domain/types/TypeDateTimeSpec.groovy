@@ -23,12 +23,30 @@ class TypeDateTimeSpec extends Specification {
             2019 | 1 | 1 | 5 | 20 | 45 || '2019-01-01T05:20:45'
     }
 
+    void 'to string'() {
+        expect:
+            TypeDateTimeImp.create(y, m, d, h, mm, s).toString() == dt
+        where:
+            y    | m | d | h | mm | s  || dt
+            2019 | 1 | 1 | 5 | 20 | 45 || '2019-01-01T05:20:45'
+    }
+
     void 'date now'() {
         when:
             def now = LocalDateTime.now();
             def dateNow = TypeDateTimeImp.now()
         then:
             now.getYear() == dateNow.value().getYear()
+    }
+
+    void 'null values'() {
+
+        when:
+            def date = new TypeDateTimeImp(null)
+        then:
+            date.formatDate() == ''
+            date.formatDateTime() == ''
+
     }
 
 
