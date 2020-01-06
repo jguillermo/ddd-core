@@ -99,6 +99,11 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.5</version>
+                <configuration>
+                    <excludes>
+                        <exclude>com/misa/core/domain/libraries/**/*</exclude>
+                    </excludes>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
@@ -115,7 +120,7 @@
                     <!-- Add this checking -->
                     <execution>
                         <id>jacoco-check</id>
-<!--                        <phase>test</phase>-->
+                        <phase>test</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
@@ -127,19 +132,16 @@
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.8</minimum>
+                                            <minimum>0.99</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
                             </rules>
                         </configuration>
                     </execution>
-
                 </executions>
             </plugin>
         </plugins>
     </build>
-
-
 </project>
 
